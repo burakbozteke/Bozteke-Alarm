@@ -219,6 +219,11 @@ namespace Bozteke_Alarm
 
          private void timer2_Tick(object sender, EventArgs e)
         {
+            if (timer1.Enabled == false)
+            {
+                notifyIcon1.Text = "Bozteke Alarm V" + surum;
+                return;
+            }
             if (islem == 0)
             {
                 notifyIcon1.Text = "Bilgisayar kapatma için geçen zaman " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
@@ -234,6 +239,7 @@ namespace Bozteke_Alarm
                 notifyIcon1.Text = "Anımsatıcı için geçen zaman: " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
                 return;
             }
+
         }//timer2 tick olayının sonu
 
                 private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
